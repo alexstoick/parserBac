@@ -5,7 +5,7 @@ module Helpers
 	class Parser
 
 		attr_accessor :candidati, :candidat
-		def parse(page , fileName )
+		def parse(page)
 
 			nbsp = Nokogiri::HTML("&nbsp;").text
 			doc = Nokogiri::HTML(page)
@@ -94,8 +94,9 @@ module Helpers
 					@canditati.push( entry )
 				end
 			end
-			File.open( 'json/' + fileName + '.json', 'w' ) { |file| file.puts ( @canditati.to_json ) }
-
+		end
+		def writeToFile(filename)
+			File.open( 'json/' + filename + '.json', 'w' ) { |file| file.puts ( @canditati.to_json ) }
 		end
 	end
 end

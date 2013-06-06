@@ -7,13 +7,9 @@ require 'helpers'
 
 include Helpers
 
-min = 1
-max = 20019
-
 link = 'files/'
 extensie = '.64'
 
-url = 'files/1.64'
 completed = 0
 
 # start = Time.now
@@ -51,8 +47,11 @@ for j in 1..40 do
 			file = File.read(url)
 			decoder = Decoder.new(file)
 			page = decoder.s3
+
+			parser.parse(page)
+
 			completed += 1
-			parser.parse(page,completed.to_s)
+			parser.writeToFile(completed.to_s)
 
 			fin = Time.now
 			puts 'completed ' + completed.to_s + ' duration: ' + (fin-start).to_s

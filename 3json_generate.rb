@@ -7,11 +7,8 @@ require 'helpers'
 
 include Helpers
 
-min = 1
-max = 20019
-
-link = 'http://static.bacalaureat.edu.ro/2012/rapoarte/rezultate/dupa_medie/page_'
-extensie = '.html'
+link = 'files/'
+extensie = '.64'
 
 completed = 12000
 
@@ -27,21 +24,25 @@ for j in 81..133 do
 
 	urls.each do |url|
 		th[i] = Thread.new do
+
 			start = Time.now
 
-			completed += 1
-
 			parser = Parser.new
-			page = File.read('output.html')
+			file = File.read(url)
+			decoder = Decoder.new(file)
+			page = decoder.s3
+
+			parser.parse(page)
+
 			completed += 1
-			parser.parse(page,completed.to_s)
+			parser.writeToFile(completed.to_s)
 
 			fin = Time.now
 			puts 'completed ' + completed.to_s + ' duration: ' + (fin-start).to_s
+
 		end
 		i+=1
 	end
 
 	th.each { |t| t.join }
 end
-
