@@ -13,13 +13,15 @@ extensie = '.64'
 
 completed = 0
 
+big_ass_entries = []
 
 
-for j in 361..399 do
+#for j in 201..300 do
+for j in 346..399 do
 	urls=[]
 
-	for i in 1..50 do
-		urls[i-1] = link+(i+50*(j-1)).to_s+extensie
+	for i in 0..49 do
+		urls[i] = link+(i+50*(j-1)).to_s+extensie
 	end
 
 	i = 0
@@ -50,6 +52,8 @@ for j in 361..399 do
 		i+=1
 	end
 	th.each { |t| t.join }
-	File.open( 'json/KKK' + j.to_s + '.json' , 'w') { |file| file.puts ( entries ) }
+	big_ass_entries.push( entries )
+	File.open( 'json/' + j.to_s + '.json' , 'w') { |file| file.puts(entries) }
 end
 
+File.open( 'complete/' + j.to_s + '.json' , 'w') { |file| file.puts(big_ass_entries) }
