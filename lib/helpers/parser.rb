@@ -97,7 +97,7 @@ module Helpers
 			end
 		end
 		def getCanditati
-			return @canditati
+			return @canditati.to_json
 		end
 		def writeToFile(filename)
 			File.open( 'json/' + filename + '.json', 'w' ) { |file| file.puts ( @canditati.to_json ) }

@@ -3,6 +3,7 @@ $: << "./lib"
 
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 require 'helpers'
 
 include Helpers
@@ -14,11 +15,11 @@ completed = 0
 
 
 
-for j in 1..40 do
+for j in 301..330 do
 	urls=[]
 
-	for i in 1..150 do
-		urls[i-1] = link+(i+150*(j-1)).to_s+extensie
+	for i in 1..50 do
+		urls[i-1] = link+(i+50*(j-1)).to_s+extensie
 	end
 
 	i = 0
@@ -49,5 +50,6 @@ for j in 1..40 do
 		i+=1
 	end
 	th.each { |t| t.join }
-	File.open( 'json/ABC' + j.to_s + '.json' , 'w') { |file| file.puts ( entries ) }
+	File.open( 'json/KKK' + j.to_s + '.json' , 'w') { |file| file.puts ( entries ) }
 end
+
