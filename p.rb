@@ -8,4 +8,4 @@ parser = Parser.new
 
 page = File.read('output.html')
 
-parser.parse(page)
+parser.parse(page,'rahat')
