@@ -13,7 +13,24 @@ max = 20019
 link = 'files/'
 extensie = '.64'
 
+url = 'files/1.64'
 completed = 0
+
+# start = Time.now
+
+# parser = Parser.new
+# file = File.read(url)
+# decoder = Decoder.new(file)
+# page = decoder.s3
+
+# completed += 1
+# parser.parse(page,completed.to_s)
+
+# fin = Time.now
+# puts 'completed ' + completed.to_s + ' duration: ' + (fin-start).to_s
+# exit()
+
+
 
 for j in 1..40 do
 	urls=[]
@@ -31,12 +48,15 @@ for j in 1..40 do
 			start = Time.now
 
 			parser = Parser.new
-			page = File.read('output.html')
+			file = File.read(url)
+			decoder = Decoder.new(file)
+			page = decoder.s3
 			completed += 1
 			parser.parse(page,completed.to_s)
 
 			fin = Time.now
 			puts 'completed ' + completed.to_s + ' duration: ' + (fin-start).to_s
+
 		end
 		i+=1
 	end
