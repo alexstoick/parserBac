@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'nokogiri'
 require 'json'
 module Helpers
@@ -15,7 +16,7 @@ module Helpers
 					matches = script[0].inner_html.match(/LuatDePeBacalaureatEduRo\["(.*?)"\]="(.*?)";LuatDePe_BacalaureatEduRo\["(.*?)"\]="(.*?)";Luat_DePe_BacalaureatEduRo\["(.*?)"\]="(.*?)"/)
 
 					@candidat.nume = matches[2].gsub('<br>','')
-					@candidat.unitate = tds[2].css('a').inner_html.gsub('&amp;nbsp','')
+					@candidat.unitate = tds[2].css('a').inner_html.gsub('&amp;nbsp','').gsub(/\xFF/, '')
 					@candidat.judet = tds[3].css('a').inner_html.gsub('&amp;nbsp','')
 					@candidat.promotieAnterioara = tds[4].inner_html.gsub('&amp;nbsp','')
 					@candidat.formaInvatamant = tds[5].inner_html.gsub('&amp;nbsp','')
@@ -45,7 +46,9 @@ module Helpers
 					@candidat.alegere.contestatie = tds[8].inner_html.gsub('&amp;nbsp','')
 					@candidat.alegere.notaFinala = tds[9].inner_html.gsub('&amp;nbsp','')
 
-					# puts @candidat.to_json
+					# puts @candidat.attributes#to_json
+					# exit()
+
 					entry = {}
 
 
