@@ -2,11 +2,8 @@ require "Base64"
 
 module Helpers
 	class Decoder
-		def initialize(encoded)
-			@encoded = encoded
-		end
-		def encoded
-			@encoded
+		def setEncoded(encoded)
+			@encoded=encoded
 		end
 
 		def s0( p1, p2, p3 )
@@ -39,7 +36,7 @@ module Helpers
 
 		def s3()
 
-			l1 = encoded
+			l1 = @encoded
 
 			unless ( l1.nil? )
 

@@ -29,7 +29,8 @@ for j in 41..80 do
 
 			parser = Parser.new
 			file = File.read(url)
-			decoder = Decoder.new(file)
+			decoder = Decoder.new
+			decoder.setEncoded(file)
 			page = decoder.s3
 
 			parser.parse(page)

@@ -19,10 +19,11 @@ module Helpers
 					matches = script[0].inner_html.match(/LuatDePeBacalaureatEduRo\["(.*?)"\]="(.*?)";LuatDePe_BacalaureatEduRo\["(.*?)"\]="(.*?)";Luat_DePe_BacalaureatEduRo\["(.*?)"\]="(.*?)"/)
 					#'&amp;nbsp'
 					@candidat.nume = matches[2].gsub('<br>','')
-					@candidat.unitate = tds[2].css('a').inner_html.gsub(nbsp,'').gsub(/\xFF/, '').gsub(/"/,"'")
-					@candidat.judet = tds[3].css('a').inner_html.gsub(nbsp,'').gsub(/\xFF/, '')
-					@candidat.promotieAnterioara = tds[4].inner_html.gsub(nbsp,'').gsub(/\xFF/, '')
-					@candidat.formaInvatamant = tds[5].inner_html.gsub(nbsp,'').gsub(/\xFF/, '')
+					@candidat.unitate = tds[2].css('a').inner_html.gsub(nbsp,'').gsub(/"/,"'")#.gsub(/\xFF/, '')
+					@candidat.judet = tds[3].css('a').inner_html.gsub(nbsp,'')#.gsub(/\xFF/, '')
+					@candidat.promotieAnterioara = tds[4].inner_html.gsub(nbsp,'')#.gsub(/\xFF/, '')
+					@candidat.formaInvatamant = tds[5].inner_html.gsub(nbsp, '')#.gsub(/\xFF/, '')
+
 					@candidat.specializare = tds[6].inner_html.gsub(nbsp,'').gsub(/\xFF/, '')
 					@candidat.lbRomana.competente = tds[7].inner_html.gsub(nbsp,'').gsub(/\xFF/, '')
 					@candidat.lbRomana.scris = tds[8].inner_html.gsub(nbsp,'').gsub(/\xFF/, '')
@@ -94,6 +95,9 @@ module Helpers
 					@canditati.push( entry )
 				end
 			end
+		end
+		def getCanditati
+			return @canditati
 		end
 		def writeToFile(filename)
 			File.open( 'json/' + filename + '.json', 'w' ) { |file| file.puts ( @canditati.to_json ) }
