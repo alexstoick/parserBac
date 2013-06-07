@@ -56,41 +56,39 @@ module Helpers
 					entry["Nume"] = @candidat.nume
 					entry["Unitate"] = @candidat.unitate
 					entry["Judet"] = @candidat.judet
-					entry["Promotie anterioara"]=  @candidat.promotieAnterioara
-					entry["Forma invatamant"]=  @candidat.formaInvatamant
+					entry["Promotie_anterioara"]=  @candidat.promotieAnterioara
+					entry["Forma_invatamant"]=  @candidat.formaInvatamant
 					entry["Specializare" ] = @candidat.specializare
-					entry["Competente digitale"] =  @candidat.competenteDigitale
+					entry["Competente_digitale"] =  @candidat.competenteDigitale
 					entry["Medie"] = @candidat.medie
 					entry["Rezultat"] = @candidat.rezultat
 
-					entry["lbRomana"]={}
-					entry["lbRomana"]["Competente"] = @candidat.lbRomana.competente
-					entry["lbRomana"]["Scris"] = @candidat.lbRomana.scris
-					entry["lbRomana"]["Contestatie"] = @candidat.lbRomana.contestatie
-					entry["lbRomana"]["Nota finala"] =  @candidat.lbRomana.notaFinala
+					entry["lbRomana_Competente"] = @candidat.lbRomana.competente
+					entry["lbRomana_Scris"] = @candidat.lbRomana.scris
+					entry["lbRomana_Contestatie"] = @candidat.lbRomana.contestatie
+					entry["lbRomana_NotaFinala"] =  @candidat.lbRomana.notaFinala
 
-					entry["lbMaterna"]={}
-					entry["lbMaterna"]["Limba"] = @candidat.lbMaterna.limba
-					entry["lbMaterna"]["Competente"] = @candidat.lbMaterna.competente
-					entry["lbMaterna"]["Scris"] = @candidat.lbMaterna.scris
-					entry["lbMaterna"]["Contestatie"] = @candidat.lbMaterna.contestatie
-					entry["lbMaterna"]["Nota finala"] =  @candidat.lbMaterna.notaFinala
+					entry["lbMaterna_Limba"] = @candidat.lbMaterna.limba
+					entry["lbMaterna_Competente"] = @candidat.lbMaterna.competente
+					entry["lbMaterna_Scris"] = @candidat.lbMaterna.scris
+					entry["lbMaterna_Contestatie"] = @candidat.lbMaterna.contestatie
+					entry["lbMaterna_NotaFinala"] =  @candidat.lbMaterna.notaFinala
 
-					entry["lbModerna"]={}
-					entry["lbModerna"]["Limba"] = @candidat.lbModerna.limba
-					entry["lbModerna"]["Nota"] = @candidat.lbModerna.nota
 
-					entry["obligatorie"]={}
-					entry["obligatorie"]["Disciplina"] = @candidat.obligatorie.disciplina
-					entry["obligatorie"]["Nota"] = @candidat.obligatorie.nota
-					entry["obligatorie"]["Contestatie"] = @candidat.obligatorie.contestatie
-					entry["obligatorie"]["Nota finala"] =  @candidat.obligatorie.notaFinala
+					entry["lbModerna_Limba"] = @candidat.lbModerna.limba
+					entry["lbModerna_Nota"] = @candidat.lbModerna.nota
 
-					entry["alegere"]={}
-					entry["alegere"]["Disciplina"] = @candidat.alegere.disciplina
-					entry["alegere"]["Nota"] = @candidat.alegere.nota
-					entry["alegere"]["Contestatie"] = @candidat.alegere.contestatie
-					entry["alegere"]["Nota finala"] =  @candidat.alegere.notaFinala
+
+					entry["obligatorie_Disciplina"] = @candidat.obligatorie.disciplina
+					entry["obligatorie_Nota"] = @candidat.obligatorie.nota
+					entry["obligatorie_Contestatie"] = @candidat.obligatorie.contestatie
+					entry["obligatorie_Nota finala"] =  @candidat.obligatorie.notaFinala
+
+
+					entry["alegere_Disciplina"] = @candidat.alegere.disciplina
+					entry["alegere_Nota"] = @candidat.alegere.nota
+					entry["alegere_Contestatie"] = @candidat.alegere.contestatie
+					entry["alegere_NotaFinala"] =  @candidat.alegere.notaFinala
 
 					@canditati.push( entry )
 				end

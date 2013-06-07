@@ -1,0 +1,40 @@
+{
+  "Nume": "NEDELCU G. ARABELA",
+  "Unitate": "COLEGIUL NATIONAL 'VASILE ALECSANDRI' GALATI",
+  "Judet": "GL",
+  "Promotie_anterioara": "NU",
+  "Forma_invatamant": "Zi",
+  "Specializare": "Matematica-Informatica",
+  "Competente digitale": "Utilizator experimentat",
+  "Medie": "9.93",
+  "Rezultat": "Reuşit",
+  "lbRomana": {
+    "Competente": "Utilizator experimentat",
+    "Scris": "9.9",
+    "Contestatie": " ",
+    "Nota finala": "9.9"
+  },
+  "lbMaterna": {
+    "Limba": " ",
+    "Competente": "",
+    "Scris": " ",
+    "Contestatie": " ",
+    "Nota finala": " "
+  },
+  "lbModerna": {
+    "Limba": "Limba engleza",
+    "Nota": ""
+  },
+  "obligatorie": {
+    "Disciplina": "Matematica T1",
+    "Nota": "10",
+    "Contestatie": " ",
+    "Nota finala": "10"
+  },
+  "alegere": {
+    "Disciplina": "Chimie organica T1 Nivel I  ",
+    "Nota": "9.9",
+    "Contestatie": " ",
+    "Nota finala": "9.9"
+  }
+}
