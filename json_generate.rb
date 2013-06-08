@@ -16,7 +16,7 @@ completed = 0
 big_ass_entries = []
 
 #for j in 1..100 do
-for j in 301..345 do
+for j in 301..399 do
 	urls=[]
 
 	for i in 0..49 do

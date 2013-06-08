@@ -1,0 +1,1 @@
+jruby -J-Djruby.thread.pooling=true -J-Xmx2048m json_generate.rb
